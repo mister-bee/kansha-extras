@@ -1,6 +1,9 @@
-import Link from "next/link";
+'use client';
 
-export default function Room3D() {
+import Link from "next/link";
+import ProtectedRoute from "../components/ProtectedRoute";
+
+function Room3DPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-emerald-500 via-teal-500 to-teal-600 px-8">
       <main className="flex flex-col items-center gap-8 text-center">
@@ -18,6 +21,14 @@ export default function Room3D() {
         </Link>
       </main>
     </div>
+  );
+}
+
+export default function Room3D() {
+  return (
+    <ProtectedRoute>
+      <Room3DPage />
+    </ProtectedRoute>
   );
 }
 

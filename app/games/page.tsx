@@ -1,6 +1,9 @@
-import Link from "next/link";
+'use client';
 
-export default function Games() {
+import Link from "next/link";
+import ProtectedRoute from "../components/ProtectedRoute";
+
+function GamesPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-orange-500 via-red-500 to-red-600 px-8">
       <main className="flex flex-col items-center gap-8 text-center">
@@ -18,6 +21,14 @@ export default function Games() {
         </Link>
       </main>
     </div>
+  );
+}
+
+export default function Games() {
+  return (
+    <ProtectedRoute>
+      <GamesPage />
+    </ProtectedRoute>
   );
 }
 

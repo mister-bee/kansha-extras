@@ -1,7 +1,10 @@
+'use client';
+
 import Link from "next/link";
 import MarbleJarSimulation from "./MarbleJarSimulation";
+import ProtectedRoute from "../components/ProtectedRoute";
 
-export default function MarbleJar() {
+function MarbleJarPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-blue-500 via-purple-500 to-purple-600 px-8 py-12">
       <main className="flex flex-col items-center gap-8 text-center">
@@ -17,6 +20,14 @@ export default function MarbleJar() {
         </Link>
       </main>
     </div>
+  );
+}
+
+export default function MarbleJar() {
+  return (
+    <ProtectedRoute>
+      <MarbleJarPage />
+    </ProtectedRoute>
   );
 }
 
